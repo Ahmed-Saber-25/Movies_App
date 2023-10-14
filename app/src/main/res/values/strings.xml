@@ -3,4 +3,5 @@
     <string name="retry">retry</string>
     <string name="total_results">Result Count : </string>
     <string name="check_network_connection">Check Network Connection!</string>
+    <string name="movie_poster">movie poster</string>
 </resources>

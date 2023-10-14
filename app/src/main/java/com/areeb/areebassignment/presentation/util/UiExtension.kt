@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isVisible
+import androidx.databinding.BindingAdapter
 import com.areeb.areebassignment.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -31,4 +32,8 @@ fun ImageView.loadImage(context: Context,imageUrl:String?) {
         .load(imageUrl)
         .transition(DrawableTransitionOptions.withCrossFade())
         .into(this)
+}
+@BindingAdapter("loadImage")
+fun loadImage(view: ImageView,imageUrl: String?){
+    view.loadImage(view.context,imageUrl)
 }

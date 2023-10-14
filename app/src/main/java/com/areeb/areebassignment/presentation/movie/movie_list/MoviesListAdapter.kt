@@ -35,10 +35,7 @@ class MoviesListAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Movie?) {
-            binding.tvTitle.text = item?.title
-            binding.imageView.loadImage(binding.root.context,item?.posterPathUrl)
-            binding.tvDate.text = item?.releaseDate
-            binding.rate.text = item?.voteAverage.toString()
+            binding.movie = item
             binding.root.setOnClickListener {
                 item?.let { movieItem -> clicked.invoke(movieItem) }
             }

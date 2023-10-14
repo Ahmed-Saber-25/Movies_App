@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.areeb.areebassignment.databinding.FragmentMovieDetailBinding
 import com.areeb.areebassignment.domain.model.Movie
 import com.areeb.areebassignment.presentation.util.loadImage
@@ -27,13 +28,14 @@ class MovieDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setViewsDetails()
+        binding.backBtn.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
     private fun setViewsDetails() {
         val movie = arguments?.get("movie") as? Movie
-        binding.tvTitle.text = movie?.title
-        binding.tvContent.text = movie?.overview
-        binding.ivImage.loadImage(requireContext(),movie?.backdropPathUrl)
+        binding.movie = movie
     }
 
 }

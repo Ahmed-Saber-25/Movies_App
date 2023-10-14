@@ -11,17 +11,16 @@ app:startDestination="@id/MoviesFragment">
     android:label="fragment_movies"
     tools:layout="@layout/fragment_movies">
     <action
-        android:id="@+id/action_moviesFragment_to_movieDetailFragment"
-        app:destination="@id/MovieDetailFragment" />
+        android:id="@+id/action_MoviesFragment_to_movieDetailFragment"
+        app:destination="@id/movieDetailFragment" />
 </fragment>
-<fragment
-    android:id="@+id/MovieDetailFragment"
-    android:name="com.areeb.areebassignment.presentation.movie.movie_details.MovieDetailFragment"
-    android:label="fragment_movie_detail"
-    tools:layout="@layout/fragment_movie_detail">
-
-    <argument
-        android:name="movie"
-        app:argType="com.areeb.areebassignment.domain.model.Movie" />
-</fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.areeb.areebassignment.presentation.movie.movie_details.MovieDetailFragment"
+        android:label="MovieDetailFragment"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="movie"
+            app:argType="com.areeb.areebassignment.domain.model.Movie" />
+    </fragment>
 </navigation>
