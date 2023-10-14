@@ -20,7 +20,7 @@ constructor(
     private val getMoviesUseCase: GetMoviesUseCase,
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(MoviesUiState())
+    val _uiState = MutableStateFlow(MoviesUiState())
     val uiState: StateFlow<MoviesUiState> = _uiState.asStateFlow()
 
     init {
@@ -35,7 +35,7 @@ constructor(
         }
     }
 
-    private fun getMovies() {
+    fun getMovies() {
         viewModelScope.launch {
             delay(1000)
             getMoviesUseCase()
