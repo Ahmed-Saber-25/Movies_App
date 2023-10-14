@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.areeb.areebassignment.R
@@ -75,7 +76,10 @@ class MoviesFragment : Fragment() {
                     reenterTransition = MaterialElevationScale(true).apply {
                         duration = 300L
                     }
-                    //todo:handle navigation to details screen
+                    findNavController().navigate(
+                        MoviesFragmentDirections
+                            .actionMoviesFragmentToMovieDetailFragment(movie = movie)
+                    )
                 }
 
             adapter = moviesListAdapter
